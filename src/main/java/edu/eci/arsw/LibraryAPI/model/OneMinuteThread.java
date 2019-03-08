@@ -24,8 +24,8 @@ public class OneMinuteThread extends Thread{
 			this.sleep(60000);
 			ls.addBooksByLibraryID(id, book);
 			Configuration configuration = new Configuration()
-			.domain("").apiKey("")
-			.from("test@mail.com", "");
+			.domain("sandboxa0eb7d3e45004fbe90ced64efd57a7f7.mailgun.org").apiKey("0aae764cbf6d69016752eb8e493315a7-acb0b40c-a31f77f6")
+			.from("test@mail.com", "postmaster@sandboxa0eb7d3e45004fbe90ced64efd57a7f7.mailgun.org");
 			 Mail.using(configuration).to(userName).subject("Registro exitoso").text("Se ha registrado el libro"+book.getNombre()).build().send()
 			.responseMessage();
 		} catch (Exception e) {
